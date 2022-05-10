@@ -1,0 +1,30 @@
+<body>
+<header class="header">
+	<div class="container">
+		<div class="zagolovok">
+		<p>
+		 Записки
+		</p>
+		</div>
+	</div>
+</header>
+
+<div class="main">
+	<div class="container">
+		<div class>
+		<ul>
+		  <% @articles.each do |article| %>
+		   <% unless article.archived? %>
+		    <li>
+		     <%= link_to article.title, article %> 
+		    </li>
+		   <% end %>
+		  <% end %>
+		</ul>
+	</div>
+</div>
+
+<footer>
+<%= link_to "New Article", new_article_path %>
+</footer>
+</body>
